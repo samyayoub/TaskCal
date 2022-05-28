@@ -11,6 +11,7 @@ import './App.css';
 import {Scheduler, View} from 'devextreme-react/scheduler';
 import {appointments} from './data.js';
 import notify from 'devextreme/ui/notify';
+import Timer from './Timer';
 
 
 class App extends Component {
@@ -38,28 +39,30 @@ class App extends Component {
 
   render() {
     return (
-      <Scheduler id="scheduler"
-      defaultCurrentView="month"
-      dataSource={appointments}
-      textExpr="title"
-      allDayExpr='dayLong'
-      recurrenceRuleExpr='recurrence'
-      editing={this.state}
-      onAppointmentAdded={this.showAddedToast}
-      onAppointmentUpdated={this.showUpdatedToast}
-      onAppointmentDeleted={this.showDeletedToast}>
-        <View
-          type="day"
-          startDayHour={10}
-          endDayHour={22}
-        />
-        <View
-            type="week"
-            startDayHour={10}
-            endDayHour={22}
-        />
-        <View type="month" />
-      </Scheduler>
+      // <Scheduler id="scheduler"
+      // defaultCurrentView="month"
+      // dataSource={appointments}
+      // textExpr="title"
+      // allDayExpr='dayLong'
+      // recurrenceRuleExpr='recurrence'
+      // editing={this.state}
+      // onAppointmentAdded={this.showAddedToast}
+      // onAppointmentUpdated={this.showUpdatedToast}
+      // onAppointmentDeleted={this.showDeletedToast}>
+      //   <View
+      //     type="day"
+      //     startDayHour={10}
+      //     endDayHour={22}
+      //   />
+      //   <View
+      //       type="week"
+      //       startDayHour={10}
+      //       endDayHour={22}
+      //   />
+      //   <View type="month" />
+      //   <Timer />
+      // </Scheduler>
+    <Timer />
     )
   }
 

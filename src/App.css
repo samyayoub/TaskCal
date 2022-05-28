@@ -40,3 +40,12 @@
 #scheduler  {
   height: 600px;
 }
+
+/* Timer */
+.timer  {
+  text-align: 'center';
+}
+
+.timerVariables {
+  font-size: 100px;
+}
