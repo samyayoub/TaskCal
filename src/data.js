@@ -47,3 +47,5 @@ export const appointments = [
         endDate: new Date("2022-05-27T19:00:00.000Z"),
     }
 ];
+
+export const locations = ['America/Chicago'];

@@ -12,6 +12,7 @@ import {Scheduler, View} from 'devextreme-react/scheduler';
 import {appointments} from './data.js';
 import notify from 'devextreme/ui/notify';
 
+
 class App extends Component {
 
   constructor(props) {
@@ -22,6 +23,8 @@ class App extends Component {
       allowResizing: true,
       allowDragging: true,
       allowUpdating: true,
+      allowTimeZoneEditing: true,
+      adaptivityEnabled: true,
     };
     this.onAllowAddingChanged = this.onAllowAddingChanged.bind(this);
     this.onAllowDeletingChanged = this.onAllowDeletingChanged.bind(this);
@@ -36,7 +39,7 @@ class App extends Component {
   render() {
     return (
       <Scheduler id="scheduler"
-      defaultCurrentView="agenda"
+      defaultCurrentView="month"
       dataSource={appointments}
       textExpr="title"
       allDayExpr='dayLong'
@@ -85,7 +88,7 @@ class App extends Component {
   }
 
   showAddedToast(e)  {
-    this.showToast('Added', e.appointmentData.title, 'sucess')
+    this.showToast('Added', e.appointmentData.title, 'sucess');
   }
 
   showUpdatedToast(e)  {
