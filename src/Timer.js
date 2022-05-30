@@ -19,7 +19,7 @@ function MyTimer({ expiryTimeStamp })   {
         <div className="timer">
             <h1>Timer</h1>
             <div className='timerVariables'>
-                <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
+                <span className="WIP - timerNumbers">{days}</span >:<span className="WIP - timerNumbers">{hours}</span>:<span className="WIP - timerNumbers">{minutes}</span>:<span className="WIP - timerNumbers">{seconds}</span>
             </div>
             <p>
                 {isRunning ? 'Running' : 'Not running'}
