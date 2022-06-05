@@ -13,6 +13,8 @@ import {appointments} from './data.js';
 import notify from 'devextreme/ui/notify';
 import Timer from './Timer';
 
+import PopupTimer from './Popup.js';
+
 
 class App extends Component {
 
@@ -26,6 +28,7 @@ class App extends Component {
       allowUpdating: true,
       allowTimeZoneEditing: true,
       adaptivityEnabled: true,
+      popupTriger: false,
     };
     this.onAllowAddingChanged = this.onAllowAddingChanged.bind(this);
     this.onAllowDeletingChanged = this.onAllowDeletingChanged.bind(this);
@@ -39,30 +42,39 @@ class App extends Component {
 
   render() {
     return (
-      <Scheduler id="scheduler"
-      defaultCurrentView="month"
-      dataSource={appointments}
-      textExpr="title"
-      allDayExpr='dayLong'
-      recurrenceRuleExpr='recurrence'
-      editing={this.state}
-      onAppointmentAdded={this.showAddedToast}
-      onAppointmentUpdated={this.showUpdatedToast}
-      onAppointmentDeleted={this.showDeletedToast}>
-        <View
-          type="day"
-          startDayHour={10}
-          endDayHour={22}
-        />
-        <View
-            type="week"
-            startDayHour={10}
-            endDayHour={22}
-        />
-        <View type="month" />
-        <Timer />
-      </Scheduler>
-    // <Timer />
+      // <Scheduler id="scheduler"
+      // defaultCurrentView="month"
+      // dataSource={appointments}
+      // textExpr="title"
+      // allDayExpr='dayLong'
+      // recurrenceRuleExpr='recurrence'
+      // editing={this.state}
+      // onAppointmentAdded={this.showAddedToast}
+      // onAppointmentUpdated={this.showUpdatedToast}
+      // onAppointmentDeleted={this.showDeletedToast}>
+      //   <View
+      //     type="day"
+      //     startDayHour={10}
+      //     endDayHour={22}
+      //   />
+      //   <View
+      //       type="week"
+      //       startDayHour={10}
+      //       endDayHour={22}
+      //   />
+      //   <View type="month" />
+      // </Scheduler>
+      
+      <div>
+        <main>
+          <button>Click here for a popup</button>
+          <br /><br />
+          <PopupTimer popupTriger>
+            <Timer />
+          </PopupTimer>
+        </main>
+      </div>
+
     )
   }
 
